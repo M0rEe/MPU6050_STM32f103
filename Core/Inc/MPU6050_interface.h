@@ -8,7 +8,7 @@
 #ifndef INC_MPU6050_INTERFACE_H_
 #define INC_MPU6050_INTERFACE_H_
 
-#include "stm32f1xx_hal_i2c.h"
+#include "stm32f1xx_hal.h"
 
 #define MPU_DEBUG_DISABLED 2
 #define MPU_DEBUG_ENABLED 1
@@ -47,6 +47,7 @@
 #define MPU_AFS_SEL_OFFSET 3
 
 #define MPU_MAX_TIMEOUT_MS 100
+
 void MPU_6050_Init();
 
 uint16_t MPU_6050_getGyroX();

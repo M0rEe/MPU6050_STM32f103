@@ -1,0 +1,7 @@
+../Core/Src/MPU6050_program.c:10:6:MPU_6050_Init	32	static
+../Core/Src/MPU6050_program.c:65:10:MPU_6050_getGyroX	32	static
+../Core/Src/MPU6050_program.c:83:10:MPU_6050_getGyroY	32	static
+../Core/Src/MPU6050_program.c:101:10:MPU_6050_getGyroZ	32	static
+../Core/Src/MPU6050_program.c:120:10:MPU_6050_getAccX	4	static
+../Core/Src/MPU6050_program.c:124:10:MPU_6050_getAccY	4	static
+../Core/Src/MPU6050_program.c:128:10:MPU_6050_getAccZ	4	static

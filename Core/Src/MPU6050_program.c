@@ -63,21 +63,68 @@ void MPU_6050_Init() {
 }
 
 uint16_t MPU_6050_getGyroX() {
+	uint8_t l_Data[2];
+	HAL_StatusTypeDef retState = HAL_I2C_Mem_Read(&hi2c1,
+			((MPU_I2C_ADDRESS << 1) + 1), MPU_GYROSCOPE_DATA_REG_START, 1,
+			l_Data, 2, MPU_MAX_TIMEOUT_MS);
+	uint16_t retData = (l_Data[0] << 8) + l_Data[1];
 
+#if MPU_DEBUG_STATE == MPU_DEBUG_ENABLED
+	if (retState == HAL_OK) {
+		printf("X Data retrieved successfully\n");
+	} else {
+		printf("X Data retrieving Failed\n");
+	}
+#else
+#endif
+	return retData;
 }
+
 uint16_t MPU_6050_getGyroY() {
+	uint8_t l_Data[2];
+	HAL_StatusTypeDef retState = HAL_I2C_Mem_Read(&hi2c1,
+			((MPU_I2C_ADDRESS << 1) + 1), MPU_GYROSCOPE_DATA_REG_START + 2, 1,
+			l_Data, 2, MPU_MAX_TIMEOUT_MS);
+	uint16_t retData = (l_Data[0] << 8) + l_Data[1];
 
+#if MPU_DEBUG_STATE == MPU_DEBUG_ENABLED
+	if (retState == HAL_OK) {
+		printf("Y Data retrieved successfully\n");
+	} else {
+		printf("Y Data retrieving Failed\n");
+	}
+#else
+#endif
+	return retData;
 }
+
 uint16_t MPU_6050_getGyroZ() {
+	uint8_t l_Data[2];
+	HAL_StatusTypeDef retState = HAL_I2C_Mem_Read(&hi2c1,
+			((MPU_I2C_ADDRESS << 1) + 1), MPU_GYROSCOPE_DATA_REG_START + 4, 1,
+			l_Data, 2, MPU_MAX_TIMEOUT_MS);
+	uint16_t retData = (l_Data[0] << 8) + l_Data[1];
+
+#if MPU_DEBUG_STATE == MPU_DEBUG_ENABLED
+	if (retState == HAL_OK) {
+		printf("Z Data retrieved successfully\n");
+	} else {
+		printf("Z Data retrieving Failed\n");
+	}
+#else
+#endif
+	return retData;
 
 }
 
 uint16_t MPU_6050_getAccX() {
 
 }
+
 uint16_t MPU_6050_getAccY() {
 
 }
+
 uint16_t MPU_6050_getAccZ() {
 
 }
