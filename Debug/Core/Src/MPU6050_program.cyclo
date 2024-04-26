@@ -1,7 +1,7 @@
 MPU6050_program.c:10:6:MPU_6050_Init	5
 MPU6050_program.c:65:10:MPU_6050_getGyroX	2
-MPU6050_program.c:83:10:MPU_6050_getGyroY	2
-MPU6050_program.c:101:10:MPU_6050_getGyroZ	2
-MPU6050_program.c:120:10:MPU_6050_getAccX	1
-MPU6050_program.c:124:10:MPU_6050_getAccY	1
-MPU6050_program.c:128:10:MPU_6050_getAccZ	1
+MPU6050_program.c:84:10:MPU_6050_getGyroY	2
+MPU6050_program.c:103:10:MPU_6050_getGyroZ	2
+MPU6050_program.c:123:10:MPU_6050_getAccX	1
+MPU6050_program.c:127:10:MPU_6050_getAccY	1
+MPU6050_program.c:131:10:MPU_6050_getAccZ	1
