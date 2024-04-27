@@ -1,7 +1,7 @@
-../Core/Src/MPU6050_program.c:10:6:MPU_6050_Init	32	static
-../Core/Src/MPU6050_program.c:65:10:MPU_6050_getGyroX	32	static
-../Core/Src/MPU6050_program.c:84:10:MPU_6050_getGyroY	32	static
-../Core/Src/MPU6050_program.c:103:10:MPU_6050_getGyroZ	32	static
-../Core/Src/MPU6050_program.c:123:10:MPU_6050_getAccX	4	static
-../Core/Src/MPU6050_program.c:127:10:MPU_6050_getAccY	4	static
-../Core/Src/MPU6050_program.c:131:10:MPU_6050_getAccZ	4	static
+../Core/Src/MPU6050_program.c:12:6:MPU_6050_Init	32	static
+../Core/Src/MPU6050_program.c:90:10:MPU_6050_getGyroX	32	static
+../Core/Src/MPU6050_program.c:109:10:MPU_6050_getGyroY	32	static
+../Core/Src/MPU6050_program.c:128:10:MPU_6050_getGyroZ	32	static
+../Core/Src/MPU6050_program.c:148:10:MPU_6050_getAccX	32	static
+../Core/Src/MPU6050_program.c:169:10:MPU_6050_getAccY	32	static
+../Core/Src/MPU6050_program.c:189:10:MPU_6050_getAccZ	32	static

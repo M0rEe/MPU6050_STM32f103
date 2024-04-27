@@ -6,7 +6,9 @@
  */
 
 #include "MPU6050_interface.h"
+
 extern I2C_HandleTypeDef hi2c1;
+
 void MPU_6050_Init() {
 	HAL_StatusTypeDef retState = HAL_ERROR;
 //  checking for device availability
@@ -21,6 +23,7 @@ void MPU_6050_Init() {
 	}
 #else
 #endif
+
 //  Configure Gyroscope
 	uint8_t l_gyroData = (MPU_FS_SEL_500 << MPU_FS_SEL_OFFSET);
 
@@ -35,6 +38,7 @@ void MPU_6050_Init() {
 	}
 #else
 #endif
+
 //  Configure Accelerometer
 	uint8_t l_accData = (MPU_AFS_SEL_4g << MPU_AFS_SEL_OFFSET);
 
@@ -50,7 +54,7 @@ void MPU_6050_Init() {
 #else
 #endif
 
-//  Configure POWER and Stop SleepMode
+//  Configure POWER 8 MHz internal oscillator and Stop SleepMode
 	uint8_t l_pwrData = 0;
 
 	retState = HAL_I2C_Mem_Write(&hi2c1,
@@ -63,7 +67,24 @@ void MPU_6050_Init() {
 		printf("Device is in Sleep Mode\n");
 	}
 #else
-	#endif
+#endif
+
+	//  Configure digital Low-Pass Filter for Accelerometer/Gyroscope
+	//  External SYNC off by default
+
+	uint8_t l_cfgData = MPU_DLPF_ACCEL_1kHz_0Ms_GYRO_8kHz_1Ms;
+
+	retState = HAL_I2C_Mem_Write(&hi2c1,
+			((MPU_I2C_ADDRESS << 1) + MPU_I2C_WRITE_OPERATION),
+			MPU_DEVICE_CONFIG_REG, 1, &l_cfgData, 1, MPU_MAX_TIMEOUT_MS);
+#if MPU_DEBUG_STATE == MPU_DEBUG_ENABLED
+	if (retState == HAL_OK) {
+		printf("Device Running Mode\n");
+	} else {
+		printf("Device is in Sleep Mode\n");
+	}
+#else
+#endif
 }
 
 uint16_t MPU_6050_getGyroX() {
